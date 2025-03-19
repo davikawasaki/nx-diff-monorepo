@@ -1,0 +1,16 @@
+{
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "name": "c",
+    "projectType": "application",
+    "generators": {},
+    "sourceRoot": "projects/c/src",
+    "prefix": "nxp",
+    "targets": {
+      "build": {},
+      "serve": {},
+      "extract-i18n": {},
+      "test": {},
+      "lint": {},
+      "e2e": {}
+    }
+}
