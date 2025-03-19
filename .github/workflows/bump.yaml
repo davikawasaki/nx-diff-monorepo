@@ -47,7 +47,7 @@ jobs:
           # Get affected projects using Nx
           echo "$BASE"
 
-          COMMIT_HASH=$(git log -n 1 $BASE --pretty=format:"%H")
+          COMMIT_HASH=$(git rev-parse @~)
           echo $COMMIT_HASH
           CHANGED_APPS=$(npx nx show projects --affected --base=origin/$BASE --head=$COMMIT_HASH | tr '\n' ',')
 
