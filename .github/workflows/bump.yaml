@@ -49,7 +49,7 @@ jobs:
 
           COMMIT_HASH=$(git log -n 1 $BASE --pretty=format:"%H")
           echo $COMMIT_HASH
-          CHANGED_APPS=$(npx nx show projects --affected --base=origin/ --head=$COMMIT_HASH | tr '\n' ',')
+          CHANGED_APPS=$(npx nx show projects --affected --base=origin/$BASE --head=$COMMIT_HASH | tr '\n' ',')
 
           echo "Changed projects: '$CHANGED_APPS'"
 
@@ -75,7 +75,7 @@ jobs:
 
           # shellcheck disable=SC2086
           # Commitizen bump
-          cz --version
+          cz version
           npx cz bump --changelog --yes ${CZ_FLAGS}
 
           # Loop through bumped projects and create individual tags
