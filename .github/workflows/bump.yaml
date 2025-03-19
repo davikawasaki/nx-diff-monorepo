@@ -40,6 +40,8 @@ jobs:
 
       - name: Create changelog and bump
         run: |
+          npm i
+
           # Get affected projects using Nx
           CHANGED_APPS=$(npx nx show projects --affected --base=origin/${{ github.base_ref }} --head=HEAD | tr '\n' ',')
 
