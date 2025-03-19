@@ -1,0 +1,11 @@
+{
+    "name": "nx-diff-monorepo",
+    "version": "0.0.0",
+    "scripts": {},
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {
+      "nx": "^20.5.0"
+    }
+}
+  
