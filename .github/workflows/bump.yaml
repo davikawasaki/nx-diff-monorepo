@@ -39,11 +39,17 @@ jobs:
           git config --list --global
 
       - name: Create changelog and bump
+        env:
+          BASE: ${{ github.base_ref }}
         run: |
           npm i
 
           # Get affected projects using Nx
-          CHANGED_APPS=$(npx nx show projects --affected --base=origin/${{ github.base_ref }} --head=HEAD | tr '\n' ',')
+          echo "$BASE"
+
+          COMMIT_HASH=$(git log -n 1 $BASE --pretty=format:"%H")
+          echo $COMMIT_HASH
+          CHANGED_APPS=$(npx nx show projects --affected --base=origin/ --head=$COMMIT_HASH | tr '\n' ',')
 
           echo "Changed projects: '$CHANGED_APPS'"
 
