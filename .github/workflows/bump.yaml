@@ -76,7 +76,7 @@ jobs:
           # shellcheck disable=SC2086
           # Commitizen bump
           cz version
-          npx cz bump --changelog --yes ${CZ_FLAGS}
+          cz bump --changelog --yes ${CZ_FLAGS}
 
           # Loop through bumped projects and create individual tags
           for FILE in $(echo "$CZ_FILES" | tr ',' ' '); do
