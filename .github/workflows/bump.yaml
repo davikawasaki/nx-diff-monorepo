@@ -49,7 +49,7 @@ jobs:
 
           COMMIT_HASH=$(git rev-parse @~)
           echo $COMMIT_HASH
-          CHANGED_APPS=$(npx nx show projects --affected --base=origin/$BASE --head=$COMMIT_HASH | tr '\n' ',')
+          CHANGED_APPS=$(npx nx show projects --affected --base=$COMMIT_HASH --head=origin/$BASE | tr '\n' ',')
 
           echo "Changed projects: '$CHANGED_APPS'"
 
