@@ -12,6 +12,6 @@
       "c-v${version}"
     ],
     "update_changelog_on_bump": true,
-    "version": "0.70.0"
+    "version": "0.71.0"
   }
 }
