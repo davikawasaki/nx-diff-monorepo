@@ -77,7 +77,7 @@ jobs:
             exit 1
           fi
 
-      # - name: Push the release
-      #   run: |
-      #     git push --no-verify
-      #     git push --tags --no-verify
+      - name: Push the release
+        run: |
+          git push --no-verify
+          git push --tags --no-verify
